@@ -1,2 +1,12 @@
 # shapeless-for-mortals
-Workshop material for the Scala eXchange 2015 talk "Shapeless for Mortals"
+
+Workshop material for the Scala eXchange 2015 talk "Shapeless for Mortals".
+
+Please check out this repository and type `sbt updateClassifiers` to ensure that you have all the dependencies for the day.
+
+You may also wish to check out the following, as they will be instructive:
+
+- https://github.com/ensime/ensime-server/
+- https://github.com/fommil/spray-json-shapeless/
+
+On the day, please ensure that you have the latest version of this repository, as I will surely be making last minute changes.
