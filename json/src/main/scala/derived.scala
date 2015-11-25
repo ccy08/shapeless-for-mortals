@@ -22,6 +22,7 @@ object JsonFormat {
 trait FamilyFormats extends LowPriorityFamilyFormats {
   this: StandardFormats =>
 }
+object FamilyFormats extends DefaultJsonProtocol with FamilyFormats
 
 trait LowPriorityFamilyFormats {
   this: StandardFormats with FamilyFormats =>
