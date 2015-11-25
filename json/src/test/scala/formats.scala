@@ -1,5 +1,5 @@
 // Copyright (C) 2015 Sam Halliday
-// License: http://www.gnu.org/licenses/gpl.html
+// License: http://www.apache.org/licenses/LICENSE-2.0
 package s4m.exercise3.formats
 
 import spray.json._
