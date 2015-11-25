@@ -2,23 +2,20 @@
 // License: http://www.apache.org/licenses/LICENSE-2.0
 package s4m.json
 
-import Predef.{ any2stringadd => _, _ }
 import org.slf4j.LoggerFactory
 
 import spray.json._
 
 import shapeless._, labelled._
 
-// extra syntax for spray.json
-object JsonFormat {
-  def apply[T](implicit f: Lazy[JsonFormat[T]]): JsonFormat[T] = f.value
-
-  implicit class RichJsValue(val j: JsValue) extends AnyVal {
-    def :+(kv: (String, JsValue)): JsValue = JsObject(j.asJsObject.fields + kv)
-  }
-}
-
-// A trimmed down version of the version in spray-json-shapeless
+/**
+ * A trimmed down version of the version in spray-json-shapeless.
+ *
+ * - Exercise 3.1: customise product field names
+ * - Exercise 3.2: customise coproduct (flat vs nested)
+ * - Exercise 3.3: customise handling of =null= and =Option=
+ * - Exercise 3.4: handle default values on products
+ */
 trait FamilyFormats extends LowPriorityFamilyFormats {
   this: StandardFormats =>
 }
@@ -98,4 +95,13 @@ trait LowPriorityFamilyFormats {
     def write(t: T): JsValue = sg.write(gen.to(t))
   }
 
+}
+
+// extra syntax for spray.json
+object JsonFormat {
+  def apply[T](implicit f: Lazy[JsonFormat[T]]): JsonFormat[T] = f.value
+
+  implicit class RichJsValue(val j: JsValue) extends AnyVal {
+    def :+(kv: (String, JsValue)): JsValue = JsObject(j.asJsObject.fields + kv)
+  }
 }
