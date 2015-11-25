@@ -87,7 +87,11 @@ object EnsimeBuild extends Build {
 
   ////////////////////////////////////////////////
   // modules
-  lazy val json = project settings (common)
+  lazy val json = project settings (common) settings (
+    libraryDependencies ++= Seq(
+      "io.spray" %% "spray-json" % "1.3.2"
+    )
+  )
 
   lazy val sexpress = project settings (common) settings (
     offline := true,
